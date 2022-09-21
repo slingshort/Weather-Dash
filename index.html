@@ -18,10 +18,10 @@
     <div class="md:grid grid-cols-4">
         <!-- city input area -->
         <div class="col-span-1">
-            <h1>Search for a City:</h1>
+            <h1 class="p-2">Search for a City:</h1>
             <!-- city search area -->
             <form class="md:flex flex-col p-8">
-                <input type="text" placeholder="San Diego" class="border-solid border-black p-2"></input>
+                <input type="text" placeholder="San Diego" class="border-solid border-black p-2 text-center"></input>
                 <button id="searchbtn" class="rounded-lg bg-indigo-500 p-2">Search</button>
             </form>
             <!-- Search history with clicakble buttons for search history -->
@@ -37,14 +37,56 @@
         <div class="col-span-3">
             <!-- This will be the area to append today's forecast for a certain city-->
             <div class="container border-black">
-                <p>asdfasdfasdfasdfasdf</p>
+                <!-- creating IDs to target in js file to append info -->
+                <h2 class="md:text-5xl"><span id="cityMain">City Name</span><span id="dateMain"> Date</span><span id="iconMain"> Icon</span></h2>
+                <p id="tempMain">ageasdf</p>
+                <p id="windMain">asdfasdf</p>
+                <p id="humidityMain">asdfasdf</p>
 
             </div>
 
             <!-- This will be the area to append the forecast for the next 5 days -->
             <div>
-                <p>asdfasdfsd</p>
+                <h2 class="md:text-4xl">5-day Forecast</h2>
+                <!-- each card in this section will hold information fetched form API to append to these sections -->
+                <div class="flex flex-row">
+                    <div id="card1" class="container">
+                        <p id="date1">asdfasd</p>
+                        <p id="icon1">asdfasdf</p>
+                        <p id="temp1">asdfasd</p>
+                        <p id="wind1">asdfasdf</p>
+                        <p id="humidity1">asdfasdf</p>
+                    </div>
+                    <div id="card2" class="container">
+                        <p id="date2">asdfasdf</p>
+                        <p id="icon2">asdfasd</p>
+                        <p id="temp2">asdfasdf</p>
+                        <p id="wind2">asdfadsf</p>
+                        <p id="humidity2">asdfasd</p>
+                    </div>
+                    <div id="card3" class="container">
+                        <p id="date3"></p>
+                        <p id="icon3"></p>
+                        <p id="temp3"></p>
+                        <p id="wind3"></p>
+                        <p id="humidity3"></p>
+                    </div>
+                    <div id="card1" class="container">
+                        <p id="date4"></p>
+                        <p id="icon4"></p>
+                        <p id="temp4"></p>
+                        <p id="wind4"></p>
+                        <p id="humidity4"></p>
+                    </div>
+                    <div id="card5" class="container">
+                        <p id="date5"></p>
+                        <p id="icon5"></p>
+                        <p id="temp5"></p>
+                        <p id="wind5"></p>
+                        <p id="humidity5"></p>
+                    </div>
 
+                </div>
             </div>
         </div>
     </div>

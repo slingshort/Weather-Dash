@@ -41,6 +41,15 @@ function fetchWEATHER(requestURL) {
         if(response.ok) {
             response.json().then(function(data){
             console.log(data);
+            
+            var tempMain = data[0].list.main.temp
+            var windMain = data[0].list.wind.speed
+            var humidityMain = data[0].list.main.humidity
+
+            console.log(tempMain)
+            console.log(windMain)
+            console.log(humidityMain)
+
             })
         }
 
