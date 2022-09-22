@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tailwind CSS framework -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
 
@@ -20,70 +21,73 @@
         <div class="col-span-1">
             <h1 class="p-2">Search for a City:</h1>
             <!-- city search area -->
-            <form class="md:flex flex-col p-8">
-                <input type="text" placeholder="San Diego" class="border-solid border-black p-2 text-center"></input>
-                <button id="searchbtn" class="rounded-lg bg-indigo-500 p-2">Search</button>
+            <form class="md:flex flex-col p-4">
+                <input id="cityinput" type="text" placeholder="San Diego" class="border-2 border-black p-2 m-2 text-center"></input>
+                <button id="searchbtn" class="rounded-lg bg-indigo-500 p-2 m-2">Search</button>
             </form>
             <!-- Search history with clicakble buttons for search history -->
             <ul id="searchHistory" class="p-2">
-                <li>asdfdas</li>
+                <!-- <li>asdfdas</li>
                 <li>asdfadsf</li>
                 <li>asdfasdf</li>
                 <li>asdfasdf</li>
-                <li>asdfasdf</li>
+                <li>asdfasdf</li> -->
             </ul>
         </div>
 
         <div class="col-span-3">
             <!-- This will be the area to append today's forecast for a certain city-->
-            <div class="container border-black">
+            <div class="container border-2 border-black p-2 m-2">
                 <!-- creating IDs to target in js file to append info -->
-                <h2 class="md:text-5xl"><span id="cityMain">City Name</span><span id="dateMain"> Date</span><span id="iconMain"> Icon</span></h2>
-                <p id="tempMain">ageasdf</p>
-                <p id="windMain">asdfasdf</p>
-                <p id="humidityMain">asdfasdf</p>
+                <div class="flex flex-row">
+                    <h2 class="md:text-5xl p-4"><span id="cityMain">City Name</span><span id="dateMain"> Date</span></h2>
+                    <img id="iconMainarea"></img>
+                </div>
+                <p class="p-2">Temp: <span id="tempMain"></span> °C</p>
+                <p class="p-2">Wind:<span id="windMain"></span> MPH</p>
+                <p class="p-2">Humidity:<span id="humidityMain"></span> %</p>
 
             </div>
 
             <!-- This will be the area to append the forecast for the next 5 days -->
             <div>
-                <h2 class="md:text-4xl">5-day Forecast</h2>
+                <h2 class="md:text-4xl p-4">5-day Forecast</h2>
                 <!-- each card in this section will hold information fetched form API to append to these sections -->
-                <div class="flex flex-row">
-                    <div id="card1" class="container">
-                        <p id="date1">asdfasd</p>
-                        <p id="icon1">asdfasdf</p>
-                        <p id="temp1">asdfasd</p>
-                        <p id="wind1">asdfasdf</p>
-                        <p id="humidity1">asdfasdf</p>
+                <div class="flex flex-row gap-4 mr-4">
+                    <div id="card1" class="container bg-indigo-300 text-white p-4">
+                        <p id="date1area"></p>
+                        <img id="icon1area"></img>
+                        <p>Temp: <span id="temp1area"></span> °C</p>
+                        <p>Wind: <span id="wind1area"></span> MPH</p>
+                        <p>Humidity: <span id="humidity1area"></span> %</p>
                     </div>
-                    <div id="card2" class="container">
-                        <p id="date2">asdfasdf</p>
-                        <p id="icon2">asdfasd</p>
-                        <p id="temp2">asdfasdf</p>
-                        <p id="wind2">asdfadsf</p>
-                        <p id="humidity2">asdfasd</p>
+                    <div id="card2" class="container bg-indigo-300 text-white p-4">
+                        <p id="date2area"></p>
+                        <img id="icon2area"></img>
+                        <p>Temp: <span id="temp2area"></span> °C</p>
+                        <p>Wind: <span id="wind2area"></span> MPH</p>
+                        <p>Humidity: <span id="humidity2area"></span> %</p>
                     </div>
-                    <div id="card3" class="container">
-                        <p id="date3"></p>
-                        <p id="icon3"></p>
-                        <p id="temp3"></p>
-                        <p id="wind3"></p>
-                        <p id="humidity3"></p>
+                    <div id="card3" class="container bg-indigo-300 text-white p-4">
+                        <p id="date3area"></p>
+                        <img id="icon3area"></img>
+                        <p>Temp: <span id="temp3area"></span> °C</p>
+                        <p>Wind: <span id="wind3area"></span> MPH</p>
+                        <p>Humidity: <span id="humidity3area"></span> %</p>
                     </div>
-                    <div id="card1" class="container">
-                        <p id="date4"></p>
-                        <p id="icon4"></p>
-                        <p id="temp4"></p>
-                        <p id="wind4"></p>
-                        <p id="humidity4"></p>
+                    <div id="card1" class="container bg-indigo-300 text-white p-4">
+                        <p id="date4area"></p>
+                        <img id="icon4area"></img>
+                        <p>Temp: <span id="temp4area"></span> °C</p>
+                        <p>Wind: <span id="wind4area"></span> MPH</p>
+                        <p>Humidity: <span id="humidity4area"></span> %</p>
                     </div>
-                    <div id="card5" class="container">
-                        <p id="date5"></p>
-                        <p id="icon5"></p>
-                        <p id="temp5"></p>
-                        <p id="wind5"></p>
-                        <p id="humidity5"></p>
+                    <div id="card5" class="container bg-indigo-300 text-white p-4">
+                        <p id="date5area"></p>
+                        <img id="icon5area"></img>
+                        <p>Temp: <span id="temp5area"></span> °C</p>
+                        <p>Wind: <span id="wind5area"></span> MPH</p>
+                        <p>Humidity: <span id="humidity5area"></span> %</p>
                     </div>
 
                 </div>
