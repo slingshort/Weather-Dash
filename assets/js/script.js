@@ -26,8 +26,9 @@ function fetchGEOCODE(requestURL) {
             localStorage.setItem("latitude",latitude)
 
         });
+        fetchWEATHER()
     } else {
-        console.log("error in fetch")
+        console.log("error in coordinates fetch")
     }
 })
 }
@@ -120,6 +121,9 @@ function fetchWEATHER(requestURL) {
             localStorage.setItem("icon5",icon5)
 
             })
+            renderCARDS()
+        } else {
+            console.log("error in weather data fetch")
         }
     })
 }
@@ -202,11 +206,13 @@ function handleSubmit (event) {
 
     localStorage.setItem("currentCitySelection",cityinput)
     console.log(cityinput)
+
+    fetchGEOCODE()
+
+
 }
 
 var form = document.getElementById("form");
 form.addEventListener('submit',handleSubmit);
 
 fetchGEOCODE()
-fetchWEATHER()
-renderCARDS()
