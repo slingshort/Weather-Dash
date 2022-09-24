@@ -209,6 +209,22 @@ function handleSubmit (event) {
 
     fetchGEOCODE()
 
+    var citybtn = document.createElement("btn")
+    citybtn.textContent = cityinput
+    
+    if (cityinput !== null) {
+        citybtn.classList.add("bg-indigo-300", "hover:bg-indigo-700", "rounded-lg", "p-2", "m-2","text-center")
+        document.getElementById("searchHistory").appendChild(citybtn)
+        citybtn.onclick = function () {
+            // add click listener to button to take value of button and change the current city selection to clicked button
+            localStorage.setItem("currentCitySelection",cityinput)
+            // fetch and append data again based on new selection
+            fetchGEOCODE()
+        }
+    
+    } else {
+        console.log("invalid city value")
+    } 
 
 }
 
