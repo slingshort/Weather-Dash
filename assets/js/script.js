@@ -5,7 +5,7 @@ localStorage.setItem("currentCitySelection","London")
 function fetchGEOCODE(requestURL) {
     // will change this var to take input value of form (using placeholder right now)
     var city = localStorage.getItem("currentCitySelection")
-    var requestURL = "http://api.openweathermap.org/geo/1.0/direct?limit=1&appid=4ae33cda42e0e1eb25daadd0f0e7741c&q=" + city
+    var requestURL = "https://api.openweathermap.org/geo/1.0/direct?limit=1&appid=4ae33cda42e0e1eb25daadd0f0e7741c&q=" + city
 
     fetch(requestURL)
     .then(function (response){
@@ -138,42 +138,42 @@ function renderCARDS() {
     document.getElementById("humidityMain").innerHTML = localStorage.getItem("humidityMain")
     var iconMainID = localStorage.getItem("iconMain")
     // read the docs to find the URL for weather icons, including the icon id (fetched from API) as a query parameter
-    document.getElementById("iconMainarea").setAttribute("src", "http://openweathermap.org/img/wn/" +iconMainID + "@2x.png")
+    document.getElementById("iconMainarea").setAttribute("src", "https://openweathermap.org/img/wn/" +iconMainID + "@2x.png")
 
     // card 1
     document.getElementById("temp1area").innerHTML = localStorage.getItem("temp1")
     document.getElementById("wind1area").innerHTML = localStorage.getItem("wind1")
     document.getElementById("humidity1area").innerHTML = localStorage.getItem("humidity1")
     var icon1ID = localStorage.getItem("icon1")
-    document.getElementById("icon1area").setAttribute("src", "http://openweathermap.org/img/wn/" +icon1ID + "@2x.png")
+    document.getElementById("icon1area").setAttribute("src", "https://openweathermap.org/img/wn/" +icon1ID + "@2x.png")
 
     // card 2
     document.getElementById("temp2area").innerHTML = localStorage.getItem("temp2")
     document.getElementById("wind2area").innerHTML = localStorage.getItem("wind2")
     document.getElementById("humidity2area").innerHTML = localStorage.getItem("humidity2")
     var icon2ID = localStorage.getItem("icon2")
-    document.getElementById("icon2area").setAttribute("src", "http://openweathermap.org/img/wn/" +icon2ID + "@2x.png")
+    document.getElementById("icon2area").setAttribute("src", "https://openweathermap.org/img/wn/" +icon2ID + "@2x.png")
     
     // card 3
     document.getElementById("temp3area").innerHTML = localStorage.getItem("temp3")
     document.getElementById("wind3area").innerHTML = localStorage.getItem("wind3")
     document.getElementById("humidity3area").innerHTML = localStorage.getItem("humidity3")
     var icon3ID = localStorage.getItem("icon3")
-    document.getElementById("icon3area").setAttribute("src", "http://openweathermap.org/img/wn/" +icon3ID + "@2x.png")
+    document.getElementById("icon3area").setAttribute("src", "https://openweathermap.org/img/wn/" +icon3ID + "@2x.png")
 
     // card 4
     document.getElementById("temp4area").innerHTML = localStorage.getItem("temp4")
     document.getElementById("wind4area").innerHTML = localStorage.getItem("wind4")
     document.getElementById("humidity4area").innerHTML = localStorage.getItem("humidity4")
     var icon4ID = localStorage.getItem("icon4")
-    document.getElementById("icon4area").setAttribute("src", "http://openweathermap.org/img/wn/" +icon4ID + "@2x.png")
+    document.getElementById("icon4area").setAttribute("src", "https://openweathermap.org/img/wn/" +icon4ID + "@2x.png")
     
     // card 5
     document.getElementById("temp5area").innerHTML = localStorage.getItem("temp5")
     document.getElementById("wind5area").innerHTML = localStorage.getItem("wind5")
     document.getElementById("humidity5area").innerHTML = localStorage.getItem("humidity5")
     var icon5ID = localStorage.getItem("icon5")
-    document.getElementById("icon5area").setAttribute("src", "http://openweathermap.org/img/wn/" +icon5ID + "@2x.png")
+    document.getElementById("icon5area").setAttribute("src", "https://openweathermap.org/img/wn/" +icon5ID + "@2x.png")
 }
 
 // render all dates on to page
