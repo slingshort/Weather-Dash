@@ -1,5 +1,7 @@
 # Weather Dashboard
 
+Deployment link: https://slingshort.github.io/weather-dash/
+
 In this project, the aim was to design a weather dashboard to successfully fetch information from a weather API so that as a user, I can search a city and obtain easily viewable weather information for the next five days.
 
 ## Functionality
@@ -13,4 +15,9 @@ The first major obstacle was trying to interpret the information fetched from th
 
 The second difficulty was trying to figure out what the icon ID meant and how to properly access this from the fetched data. It took a bit of reading into the docs to find the approprite URL in which the icon ID could be included as a query parameter to obtain the image. It also took me a while to display the image properly on the page.
 
+## Fixes Needed
+* Form submit event listeners need to be clicked/entered three times before function works
+
 ## Further Development needed
+* Use more loops with sections of repetitive code to make project more scalable
+* 
