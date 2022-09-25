@@ -38,7 +38,7 @@ function fetchWEATHER(requestURL) {
     var longitude = localStorage.getItem("longitude")
     var latitude = localStorage.getItem("latitude")
     // included "units=metric parameter to fetch results in degrees celcius"
-    var requestURL = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=4ae33cda42e0e1eb25daadd0f0e7741c&units=metric"
+    var requestURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=4ae33cda42e0e1eb25daadd0f0e7741c&units=metric"
 
     fetch(requestURL)
     .then(function(response){
