@@ -20,4 +20,4 @@ The second difficulty was trying to figure out what the icon ID meant and how to
 
 ## Further Development needed
 * Use more loops with sections of repetitive code to make project more scalable
-* 
+* Find a way to execute successive fucntions only after successful fetch completed so that content renders onto the page
